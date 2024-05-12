@@ -12,8 +12,11 @@ entre si.
 **Reglas del juego**
 
 1.Los equipos de cada grupo jugaran entre si
+
 2.El equipo con más partidos ganados en el grupo sera candidato a discutir el 1er puesto
+
 3.El equipo que pierda la disputa por el primer puesto queda como subcampeon
+
 4.El segundo equipo con más puntaje seran cantidatos para discutir el 3er puesto
 
 **Estructuracion de la informacion**
@@ -29,6 +32,8 @@ entre si.
    - resultados
 3.dentro del archivo datos_champions.txt se encuentran los comandos de mongo db para la creacion de
 la base de datos, el uso de esta, la creacion de cada una de las colecciones y el insert de cada uno de los documentos.
+
+4.Dentro del archivo metamodelo_champions.png se encuentra la estructuracion dentro del metamodelo para mayor conocmiento de la logica.
 
 
 
