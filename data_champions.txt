@@ -1,0 +1,431 @@
+
+use champions
+db.createCollection("jugadores")
+db.createCollection("equipos")
+db.createCollection("entrenadores")
+db.createCollection("encuentro_deportivo")
+db.createCollection("resultados")
+db.createCollection("posiciones")
+db.createCollection("arbitros")
+db.getCollection("jugadores").insertMany(
+    [
+        {'nombre': 'Gretta', 'edad': 17, 'nombre_equipo': 'Manchester', 'numero_camiseta': 1}
+        {'nombre': 'Jozef', 'edad': 18, 'nombre_equipo': 'Manchester', 'numero_camiseta': 2},
+        {'nombre': 'Taber', 'edad': 16, 'nombre_equipo': 'Manchester', 'numero_camiseta': 3},
+        {'nombre': 'Alice', 'edad': 17, 'nombre_equipo': 'Manchester', 'numero_camiseta': 4},
+        {'nombre': 'Cynthea', 'edad': 16, 'nombre_equipo': 'Manchester', 'numero_camiseta': 5},
+        {'nombre': 'Pauletta', 'edad': 18, 'nombre_equipo': 'Manchester', 'numero_camiseta': 6},
+        {'nombre': 'Joelie', 'edad': 17, 'nombre_equipo': 'Real Madrid', 'numero_camiseta': 1},
+        {'nombre': 'Cleve', 'edad': 18, 'nombre_equipo': 'Real Madrid', 'numero_camiseta': 2},
+        {'nombre': 'Darrick', 'edad': 16, 'nombre_equipo': 'Real Madrid', 'numero_camiseta': 3},
+        {'nombre': 'Marci', 'edad': 17, 'nombre_equipo': 'Real Madrid', 'numero_camiseta': 4},
+        {'nombre': 'Selie', 'edad': 16, 'nombre_equipo': 'Real Madrid', 'numero_camiseta': 5},
+        {'nombre': 'Lemuel', 'edad': 18, 'nombre_equipo': 'Real Madrid', 'numero_camiseta': 6},
+        {'nombre': 'Kurtis', 'edad': 17, 'nombre_equipo': 'Paris Saint Germain', 'numero_camiseta': 1},
+        {'nombre': 'Nial', 'edad': 18, 'nombre_equipo': 'Paris Saint Germain', 'numero_camiseta': 2},
+        {'nombre': 'Darbee', 'edad': 16, 'nombre_equipo': 'Paris Saint Germain', 'numero_camiseta': 3},
+        {'nombre': 'Laura', 'edad': 17, 'nombre_equipo': 'Paris Saint Germain', 'numero_camiseta': 4},
+        {'nombre': 'Freemon', 'edad': 16, 'nombre_equipo': 'Paris Saint Germain', 'numero_camiseta': 5},
+        {'nombre': 'Ephrayim', 'edad': 18, 'nombre_equipo': 'Paris Saint Germain', 'numero_camiseta': 6},
+        {'nombre': 'Brenden', 'edad': 17, 'nombre_equipo': 'Barcelona', 'numero_camiseta': 1},
+        {'nombre': 'Hall', 'edad': 18, 'nombre_equipo': 'Barcelona', 'numero_camiseta': 2},
+        {'nombre': 'Margarethe', 'edad': 16, 'nombre_equipo': 'Barcelona', 'numero_camiseta': 3},
+        {'nombre': 'Margalo', 'edad': 17, 'nombre_equipo': 'Barcelona', 'numero_camiseta': 4},
+        {'nombre': 'Raffarty', 'edad': 16, 'nombre_equipo': 'Barcelona', 'numero_camiseta': 5},
+        {'nombre': 'Ninon', 'edad': 18, 'nombre_equipo': 'Barcelona', 'numero_camiseta': 6},
+        {'nombre': 'Karim', 'edad': 17, 'nombre_equipo': 'Arsenal', 'numero_camiseta': 1},
+        {'nombre': 'Erik', 'edad': 18, 'nombre_equipo': 'Arsenal', 'numero_camiseta': 2},
+        {'nombre': 'Ericka', 'edad': 16, 'nombre_equipo': 'Arsenal', 'numero_camiseta': 3},
+        {'nombre': 'Agnesse', 'edad': 17, 'nombre_equipo': 'Arsenal', 'numero_camiseta': 4},
+        {'nombre': 'Jacki', 'edad': 16, 'nombre_equipo': 'Arsenal', 'numero_camiseta': 5},
+        {'nombre': 'Pattie', 'edad': 18, 'nombre_equipo': 'Arsenal', 'numero_camiseta': 6},
+        {'nombre': 'Catalina', 'edad': 17, 'nombre_equipo': 'Celtic', 'numero_camiseta': 1},
+        {'nombre': 'Guthrie', 'edad': 18, 'nombre_equipo': 'Celtic', 'numero_camiseta': 2},
+        {'nombre': 'Charleen', 'edad': 16, 'nombre_equipo': 'Celtic', 'numero_camiseta': 3},
+        {'nombre': 'Graham', 'edad': 17, 'nombre_equipo': 'Celtic', 'numero_camiseta': 4},
+        {'nombre': 'Mick', 'edad': 16, 'nombre_equipo': 'Celtic', 'numero_camiseta': 5},
+        {'nombre': 'Ulick', 'edad': 18, 'nombre_equipo': 'Celtic', 'numero_camiseta': 6}
+
+    ]
+)
+
+
+db.getCollection("equipos").insertMany(
+    [
+    {
+    "nombre_equipo":"Manchester",
+    "nombre_entrenador":"Grabriel Marques",
+    "jugadores":["Gretta","Jozef","Taber","Alice","Cynthea","Pauletta"],
+    "grupo":"A"
+    },
+    {
+    "nombre_equipo":"Real Madrid",
+    "nombre_entrenador":"Juan Garcia",
+    "jugadores":["Joelie","Cleve","Darrick","Marci","Selie","Lemuel"],
+    "grupo":"A"
+    },
+    {
+    "nombre_equipo":"Paris Saint Germain",
+    "nombre_entrenador":"Clerk Flores",
+    "jugadores":["Kurtis","Nial","Darbee","Laura","Freemon","Ephrayim"],
+    "grupo":"A"
+    },
+    {
+    "nombre_equipo":"Barcelona",
+    "nombre_entrenador":"Antonio Bermudes",
+    "jugadores":["Brenden","Hall","Margarethe","Margalo","Raffarty","Ninon"],
+    "grupo":"B"
+    },
+    {
+    "nombre_equipo":"Arsenal",
+    "nombre_entrenador":"Ulick Cleck",
+    "jugadores":["Karim","Erik","Ericka","Agnesse","Jacki","Pattie"],
+    "grupo":"B"
+    },
+    {
+    "nombre_equipo":"Celtic",
+    "nombre_entrenador":"Jacob Rich",
+    "jugadores":["Catalina","Guthrie","Charleen","Graham","Mick","Ulick"],
+    "grupo":"B"
+    }
+    ]
+)
+
+
+db.getCollection("entrenadores").insertMany(
+    [
+         {
+        "nombre_entrenador":"Grabriel Marques",
+        "edad":35,
+        "nombre_equipo":"Manchester"
+    },
+
+    {
+        "nombre_entrenador":"Juan Garcia",
+        "edad":32,
+        "nombre_equipo":"Real Madrid"
+    },
+
+    {
+        "nombre_entrenador":"Clerk Flores",
+        "edad":25,
+        "nombre_equipo":"Paris Saint Germain"
+    },
+
+    {
+        "nombre_entrenador":"Antonio Bermudes",
+        "edad":45,
+        "nombre_equipo":"Barcelona"
+    },
+
+    {
+        "nombre_entrenador":"Ulick Cleck",
+        "edad":29,
+        "nombre_equipo":"Arsenal"
+    },
+
+    {
+        "nombre_entrenador":"Jacob Rich",
+        "edad":34,
+        "nombre_equipo":"Celtic"
+    }
+
+    ]
+)
+
+
+
+db.getCollection("encuentro_deportivo").insertMany(
+    [
+        {
+        "equipos_participantes":{
+            "equipo_one":"Manchester",
+            "equipo_two":"Real Madrid",
+            "grupo":"A"
+        },
+        "fecha_hora":"2024-05-01 10:40:00",
+        "lugar":"Cancha 1",
+        "arbitro":"Juan Gonzalez",
+        "ganador":"Real Madrid",
+        "goles":{
+            "equipo_one":3,
+            "equipo_two":1
+        }
+    },
+
+    {
+        "equipos_participantes":{
+            "equipo_one":"Barcelona",
+            "equipo_two":"Arsenal",
+            "grupo":"B"
+        },
+        "fecha_hora":"2024-05-01 10:40:00",
+        "lugar":"Cancha 2",
+        "arbitro":"Patricio Fernandez",
+        "ganador":"Barcelona",
+        "goles":{
+            "equipo_one":1,
+            "equipo_two":0
+        }
+    },
+
+    {
+        "equipos_participantes":{
+            "equipo_one":"Manchester",
+            "equipo_two":"Paris Saint Germain",
+            "grupo":"A"
+        },
+        "fecha_hora":"2024-05-02 10:40:00",
+        "lugar":"Cancha 1",
+        "arbitro":"Patricio Fernandez",
+        "ganador":"Manchester",
+        "goles":{
+            "equipo_one":2,
+            "equipo_two":0
+        }
+    },
+
+    {
+        "equipos_participantes":{
+            "equipo_one":"Celtic",
+            "equipo_two":"Arsenal",
+            "grupo":"B"
+        },
+        "fecha_hora":"2024-05-02 10:40:00",
+        "lugar":"Cancha 2",
+        "arbitro":"Juan Perez",
+        "ganador":"Arsenal",
+        "goles":{
+            "equipo_one":5,
+            "equipo_two":4
+        }
+    },
+
+    {
+        "equipos_participantes":{
+            "equipo_one":"Real Madrid",
+            "equipo_two":"Paris Saint Germain",
+            "grupo":"A"
+        },
+        "fecha_hora":"2024-05-03 10:40:00",
+        "lugar":"Cancha 1",
+        "arbitro":"Juan Perez",
+        "ganador":"Real Madrid",
+        "goles":{
+            "equipo_one":3,
+            "equipo_two":0
+        }
+    },
+
+    {
+        "equipos_participantes":{
+            "equipo_one":"Celtic",
+            "equipo_two":"Barcelona",
+            "grupo":"B"
+        },
+        "fecha_hora":"2024-05-03 10:40:00",
+        "lugar":"Cancha 2",
+        "arbitro":"Juan Perez",
+        "ganador":"Barcelona",
+        "goles":{
+            "equipo_one":0,
+            "equipo_two":1
+        }
+    },
+
+    
+    {
+        "equipos_participantes":{
+            "equipo_one":"Real madrid",
+            "equipo_two":"Barcelona",
+            "grupo":"grupo 1er puesto"
+        },
+        "fecha_hora":"2024-05-07 10:40:00",
+        "lugar":"Cancha 1",
+        "arbitro":"Juan Perez",
+        "ganador":"Real Madrid",
+        "goles":{
+            "equipo_one":1,
+            "equipo_two":0
+        }
+    },
+
+    {
+        "equipos_participantes":{
+            "equipo_one":"Barcelona",
+            "equipo_two":"NA",
+            "grupo":"grupo 2ndo puesto"
+        },
+        "fecha_hora":"2024-05-05 10:40:00",
+        "lugar":"Cancha 1",
+        "arbitro":"Juan Perez",
+        "ganador":"Barcelona",
+        "goles":{
+            "equipo_one":0,
+            "equipo_two":0
+        }
+    },
+
+    {
+        "equipos_participantes":{
+            "equipo_one":"Manchester",
+            "equipo_two":"Arsenal",
+            "grupo":"grupo 3er puesto"
+        },
+        "fecha_hora":"2024-05-07 11:40:00",
+        "lugar":"Cancha 1",
+        "arbitro":"Julian Mendoza",
+        "ganador":"Arsenal",
+        "goles":{
+            "equipo_one":1,
+            "equipo_two":3
+        }
+    }
+    ]
+)
+
+
+
+db.getCollection("resultados").insertMany(
+    [
+       {
+        "nombres_equipos":{
+            "equipo_one":"Manchester",
+            "equipo_two":"Real Madrid"
+        },
+        "ganador":"Real Madrid",
+        "perdedor":"Manchester",
+        "fecha_hora":"2024-05-01 10:40:00",
+        "goles_ganador":3,
+        "goles_perdedor":1
+    },
+
+    {
+        "nombres_equipos":{
+            "equipo_one":"Barcelona",
+            "equipo_two":"Arsenal"
+        },
+        "ganador":"Barcelona",
+        "perdedor":"Arsenal",
+        "fecha_hora":"2024-05-01 10:40:00",
+        "goles_ganador":1,
+        "goles_perdedor":0
+    },
+
+    {
+        "nombres_equipos":{
+            "equipo_one":"Manchester",
+            "equipo_two":"Paris Saint Germain"
+        },
+        "ganador":"Manchester",
+        "perdedor":"Paris Saint Germain",
+        "fecha_hora":"2024-05-01 10:40:00",
+        "goles_ganador":2,
+        "goles_perdedor":0
+    },
+
+    {
+        "nombres_equipos":{
+            "equipo_one":"Celtic",
+            "equipo_two":"Arsenal"
+        },
+        "ganador":"Arsenal",
+        "perdedor":"Celtic",
+        "fecha_hora":"2024-05-02 10:40:00",
+        "goles_ganador":5,
+        "goles_perdedor":4
+    },
+
+    {
+        "nombres_equipos":{
+            "equipo_one":"Real Madrid",
+            "equipo_two":"Paris Saint Germain"
+        },
+        "ganador":"Real Madrid",
+        "perdedor":"Paris Saint Germain",
+        "fecha_hora":"2024-05-03 10:40:00",
+        "goles_ganador":3,
+        "goles_perdedor":0
+    },
+
+    {
+        "nombres_equipos":{
+            "equipo_one":"Celtic",
+            "equipo_two":"Barcelona"
+        },
+        "ganador":"Barcelona",
+        "perdedor":"Celtic",
+        "fecha_hora":"2024-05-03 10:40:00",
+        "goles_ganador":1,
+        "goles_perdedor":0
+    },
+
+    
+    {
+        "nombres_equipos":{
+            "equipo_one":"Real Madrid",
+            "equipo_two":"Barcelona"
+        },
+        "ganador":"Real Madrid",
+        "perdedor":"Barcelona",
+        "fecha_hora":"2024-05-07 10:40:00",
+        "goles_ganador":1,
+        "goles_perdedor":0
+    },
+
+    {
+        "nombres_equipos":{
+            "equipo_one":"Manchester",
+            "equipo_two":"Arsenal"
+        },
+        "ganador":"Arsenal",
+        "perdedor":"Manchester",
+        "fecha_hora":"2024-05-07 11:40:00",
+        "goles_ganador":3,
+        "goles_perdedor":1
+    }
+ 
+    ]
+)
+
+
+db.getCollection("posiciones").insertMany(
+    [
+        {
+        "nombre_equipo":"Real Madrid",
+        "puntos":450,
+        "posicion":"1 er lugar",
+        "partidos_ganados":3,
+        "partidos_perdidos":0,
+        "total_partidos":3
+    },
+
+    {
+        "nombre_equipo":"Barcelona",
+        "puntos":400,
+        "posicion":"2ndo lugar",
+        "partidos_ganados":3,
+        "partidos_perdidos":1,
+        "total_partidos":1
+    },
+
+    {
+        "nombre_equipo":"Arsenal",
+        "puntos":350,
+        "posicion":"3er lugar",
+        "partidos_ganados":3,
+        "partidos_perdidos":2,
+        "total_partidos":5
+    }
+    ]
+)
+
+
+
+db.getCollection("arbitros").insertMany(
+    [
+    {"nombre_arbitro":"Juan Gonzalez","nacionalidad":"Colombiana","edad":30},
+    {"nombre_arbitro":"Patricio Fernandez","nacionalidad":"Colombiana","edad":33},
+    {"nombre_arbitro":"Juan Perez","nacionalidad":"Colombiana","edad":45}
+]
+)
