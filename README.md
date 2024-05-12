@@ -30,6 +30,7 @@ entre si.
    - encuentro_deportivo
    - posiciones
    - resultados
+     
 3.dentro del archivo datos_champions.txt se encuentran los comandos de mongo db para la creacion de
 la base de datos, el uso de esta, la creacion de cada una de las colecciones y el insert de cada uno de los documentos.
 
